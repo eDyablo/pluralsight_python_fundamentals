@@ -5,7 +5,7 @@ WORKDIR /usr/src/colorpoints
 COPY . .
 
 RUN mkdir -p out \
-    && g++ *.cpp -o out/colorpoints -static -static-libgcc -static-libstdc++
+    && g++ -std=c++20 *.cpp -o out/colorpoints -static -static-libgcc -static-libstdc++
 
 FROM scratch
 
