@@ -6,6 +6,8 @@ class Positive:
         self._instance_data = WeakKeyDictionary()
 
     def __get__(self, instance, _):
+        if instance is None:
+            return self
         return self._instance_data[instance]
 
     def __set__(self, instance, value):
